@@ -79,17 +79,23 @@
           <tr>
             <th>#</th>
             <th>Item</th>
+            <th>Ação</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let item of itens; let i = index">
             <td>{{i+1}}</td>
             <td>{{item.descricao}}</td>
+            <td>
+              <button type="button" class="btn btn-primary rounded-circle" (click)="onDelete(item)">
+                <i class="fas fa-trash" aria-hidden="true"></i>
+              </button>
+            </td>
           </tr>
         </tbody>
         <tfoot>
           <tr>
-            <td  colspan="2" *ngIf="itens.length < 1">
+            <td  colspan="3" *ngIf="itens.length < 1">
               <em>Nenhum item adicionado</em></td>
           </tr>
         </tfoot>

@@ -101,4 +101,15 @@ export class CadastroComponent implements OnInit {
     this.itens = [];
   }
 
+  onDelete(selecionado: IItem): void {
+    const novaListagem: IItem[] = [];
+
+    for (let item of this.itens) {
+      if (item !== selecionado) {
+        novaListagem.push(item);
+      }
+    }
+    this.itens = novaListagem;
+  }
+
 }
